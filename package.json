@@ -1,0 +1,7 @@
+{
+  "type":"module",
+  "scripts": {
+    "hello": "node ark.js hello.ark",
+    "start": "node ark.js hello.ark"
+  }
+}
