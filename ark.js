@@ -1,4 +1,7 @@
 const log = console.log
+const logj = function(obj){
+  console.log(JSON.stringify(obj,null,"  "))
+}
 
 
 import { Tokenizer } from "./compiler/Tokenizer.js"
@@ -13,7 +16,7 @@ const tokensObj = new Tokenizer(content)
 const astObj = new Parser(tokensObj.get())
 // const asmObj = new AsmGenerator(astObj)
 
-// log("tokens: "); log(tokensObj.get())
+log("tokens: "); log(tokensObj.get())
 
-// log("ast: "); 
-astObj.get()
+log("ast: "); 
+logj(astObj.get())

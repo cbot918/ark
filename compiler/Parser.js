@@ -31,7 +31,20 @@ function Parser(tokens){
   }
 
   this.makeFnBody = function(data){
-    
+    let node = {
+      id:{}
+    }
+    node.type = data.type
+    if (data.id){
+      node.id = data.id
+    }
+    if (data.params){
+      node.params = data.params
+    }
+    if (data.body){
+      node.body = data.body
+    }
+    return node
   }
 
   function getId(tok){
@@ -63,7 +76,6 @@ function Parser(tokens){
   this.get = function(){
     this.block = this.ast.body
     this.tokens.forEach((tok, index) => {
-      
       if (tok.type === "FUNC"){
         // if (!this.isNext(tok, "IDENTIFIER")){
         //   return
@@ -76,7 +88,6 @@ function Parser(tokens){
         }
         this.block.push(this.makeFnHeader(nodeData))
         this.block = this.block[this.fns].body
-
       }
       if (tok.type === "LEFTBRACKET"){
         let nodeData = {
@@ -90,7 +101,6 @@ function Parser(tokens){
       }
 
     });
-    logj(this.ast)
     return this.ast
   }
 }
