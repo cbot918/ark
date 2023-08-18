@@ -2,4 +2,4 @@ func hello(a string, b string){
   return "hello " + a + " " + b
 }
 
-hello()
+hello("Yale","Hsu")

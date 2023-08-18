@@ -1,9 +1,9 @@
-function ToAst(){
+function Parser(){
   this.get = function(){
     return "ast"
   }
 }
 
 export {
-  ToAst
+  Parser
 }

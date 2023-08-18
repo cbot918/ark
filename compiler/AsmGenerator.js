@@ -2,10 +2,10 @@ const log = console.log
 
 
 
-function ToAsm(file){
+function AsmGenerator(file){
   this.getAsm = function(){
     return "asm"
   }
 }
 
-export { ToAsm }
+export { AsmGenerator }
