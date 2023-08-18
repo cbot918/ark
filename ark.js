@@ -6,11 +6,14 @@ import { Parser } from "./compiler/Parser.js"
 import { AsmGenerator } from "./compiler/AsmGenerator.js"
 import { getContent } from "./compiler/Readfile.js"
 
-const file = "./hello.ark"
+const file = "testcase/hello.ark"
 
 const content = getContent(file) + "\0"
 const tokensObj = new Tokenizer(content)
-// const astObj = new Parser(tokensObj)
+const astObj = new Parser(tokensObj.get())
 // const asmObj = new AsmGenerator(astObj)
 
-tokensObj.get()
+// log("tokens: "); log(tokensObj.get())
+
+// log("ast: "); 
+astObj.get()

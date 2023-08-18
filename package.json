@@ -2,8 +2,8 @@
   "type": "module",
   "scripts": {
     "hello": "node ark.js hello.ark",
-    "start": "node ark.js hello.ark",
-    "dev":"nodemon ark.js hello.ark"
+    "start": "node ark.js ",
+    "dev":"nodemon ark.js "
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
