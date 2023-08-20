@@ -1,6 +1,6 @@
 const log = console.log
 
-const TTYPE = ["FUNC", "LEFTPAREN", "RIGHTPAREN", "STRING", "COMMA","RETURN", "LEFTBRACKET", "RIGHTBRACKET", "DOUBLEQUOTE", "PLUS", "STRINGLITERAL"]
+const TTYPE = ["FUNC", "LEFTPAREN", "RIGHTPAREN", "STRING", "COMMA","RETURN", "LEFTBRACKET", "RIGHTBRACKET", "DOUBLEQUOTE", "PLUS", "LITERAL","IDENTIFIER"]
 
 // const ATYPE = []
 
@@ -42,7 +42,7 @@ function Tokenizer(content){
           case "return":
             token.type = "RETURN"; break;
           default:
-            token.type = "LITERAL"; break;
+            token.type = "IDENTIFIER"; break;
         }
 
         this.tokens.push(token)
@@ -59,7 +59,7 @@ function Tokenizer(content){
           case "(":
             token.type = "LEFTPAREN"; break;
           case ")":
-            token.type = "LEFTPAREN"; break;
+            token.type = "RIGHTPAREN"; break;
           case ",":
             token.type = "COMMA"; break;
           case "{":
@@ -87,13 +87,13 @@ function Tokenizer(content){
           this.i += 1
         }
         token.val = val
-        token.type = "STRINGLITERAL"
+        token.type = "LITERAL"
         this.tokens.push(token)
       }
 
       this.i += 1
     }
-    log(this.tokens)
+    // log(this.tokens)
     return this.tokens
   }
 }
